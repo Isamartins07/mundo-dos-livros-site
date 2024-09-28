@@ -1,0 +1,171 @@
+/* Reset básico para remover margens e preenchimentos padrão */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.App-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #282c34;
+  color: #61dafb;
+  padding: 10px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: flex;
+  justify-content: center; /* Centraliza o título */
+  align-items: center;
+  flex-wrap: wrap; /* Permite que os itens sejam movidos para a linha abaixo se não houver espaço suficiente */
+}
+
+.header-content {
+  position: absolute;
+  right: 20px; /* Alinha os botões ao lado direito da tela */
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espaçamento entre os botões */
+}
+
+.home-button, .genre-button {
+  background-color: #3fbcdf;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.home-button:hover, .genre-button:hover {
+  background-color: #3ea6e7;
+}
+
+.genre-list {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: white;
+  list-style-type: none;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.genre-list li {
+  cursor: pointer;
+  padding: 8px 12px;
+  transition: background-color 0.3s;
+}
+
+.genre-list li:hover {
+  background-color: #f0f0f0;
+}
+
+.App-content {
+  padding: 20px;
+  margin-top: 60px; /* Adiciona espaço suficiente para o header fixo */
+  margin-bottom: 50px; /* Adiciona espaço suficiente para o footer fixo */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.book-list {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os livros sejam movidos para a linha abaixo se não houver espaço suficiente */
+  gap: 20px; /* Espaçamento entre os livros */
+  justify-content: center; /* Centraliza os livros horizontalmente */
+  max-width: 1200px; /* Limita a largura máxima dos livros */
+  width: 100%;
+}
+
+.book-container {
+  width: 300px; /* Ajuste o tamanho conforme necessário */
+  border: 2px solid #61dafb;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.book-details {
+  text-align: center;
+}
+
+.book-details h2 {
+  font-size: 1.5rem; /* Ajuste para tamanhos de tela menores */
+  color: #282c34;
+}
+
+.book-details p {
+  font-size: 1rem; /* Ajuste para tamanhos de tela menores */
+  color: #333;
+  margin: 10px 0;
+}
+
+.book-cover {
+  width: 100%;
+  max-width: 200px; /* Ajuste para tamanhos de tela menores */
+  height: auto;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.App-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #282c34;
+  color: #59b0ca;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .App-header h1 {
+    font-size: 1.5rem; /* Reduz o tamanho da fonte do título em telas menores */
+  }
+
+  .home-button, .genre-button {
+    font-size: 0.8rem; /* Reduz o tamanho da fonte dos botões em telas menores */
+    padding: 6px 12px;
+  }
+
+  .header-content {
+    right: 10px; /* Ajusta o posicionamento dos botões em telas menores */
+  }
+
+  .book-cover {
+    max-width: 150px; /* Ajusta o tamanho da capa para telas menores */
+  }
+
+  .book-container {
+    width: 100%; /* Faz com que o contêiner do livro ocupe a largura total disponível em telas menores */
+    max-width: 300px; /* Define um tamanho máximo para o contêiner do livro */
+  }
+}
